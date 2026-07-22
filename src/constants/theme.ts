@@ -1,65 +1,111 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
+import Constants from "expo-constants";
 
-import '@/global.css';
+// ─── API ──────────────────────────────────────────────────────────────────────
+export const API_URL =
+  Constants.expoConfig?.extra?.apiUrl ?? "http://localhost:3000/api/v1";
 
-import { Platform } from 'react-native';
-
+// ─── Colors ───────────────────────────────────────────────────────────────────
 export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
-} as const;
+  primary: "#4F46E5", // indigo-600
+  primaryLight: "#EEF2FF", // indigo-50
+  primaryDark: "#3730A3", // indigo-800
+  secondary: "#F59E0B", // amber-500
+  secondaryLight: "#FFFBEB", // amber-50
+  success: "#10B981", // emerald-500
+  successLight: "#ECFDF5",
+  danger: "#EF4444", // red-500
+  dangerLight: "#FEF2F2",
+  warning: "#F59E0B",
+  warningLight: "#FFFBEB",
+  gray50: "#F9FAFB",
+  gray100: "#F3F4F6",
+  gray200: "#E5E7EB",
+  gray300: "#D1D5DB",
+  gray400: "#9CA3AF",
+  gray500: "#6B7280",
+  gray600: "#4B5563",
+  gray700: "#374151",
+  gray800: "#1F2937",
+  gray900: "#111827",
+  white: "#FFFFFF",
+  black: "#000000",
+  background: "#F9FAFB",
+  surface: "#FFFFFF",
+  border: "#E5E7EB",
+  text: "#111827",
+  textSecondary: "#6B7280",
+  textMuted: "#9CA3AF",
+};
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
-
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
-
+// ─── Spacing ──────────────────────────────────────────────────────────────────
 export const Spacing = {
-  half: 2,
-  one: 4,
-  two: 8,
-  three: 16,
-  four: 24,
-  five: 32,
-  six: 64,
-} as const;
+  xs: 4,
+  sm: 8,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  xxl: 48,
+};
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+// ─── Border radius ────────────────────────────────────────────────────────────
+export const Radius = {
+  sm: 6,
+  md: 10,
+  lg: 16,
+  xl: 24,
+  full: 9999,
+};
+
+// ─── Font sizes ───────────────────────────────────────────────────────────────
+export const FontSize = {
+  xs: 11,
+  sm: 13,
+  md: 15,
+  lg: 17,
+  xl: 20,
+  xxl: 24,
+  display: 30,
+};
+
+// ─── Shadows ──────────────────────────────────────────────────────────────────
+export const Shadow = {
+  sm: {
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
+  },
+  md: {
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  lg: {
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    elevation: 6,
+  },
+};
+
+// ─── Misc ─────────────────────────────────────────────────────────────────────
+export const STORAGE_KEYS = {
+  ACCESS_TOKEN: "access_token",
+  REFRESH_TOKEN: "refresh_token",
+  USER: "user",
+};
+
+export const PRODUCT_TYPES = [
+  "All",
+  "Electronics",
+  "Audio",
+  "Footwear",
+  "Clothing",
+  "Books",
+  "Home",
+  "Sports",
+];
