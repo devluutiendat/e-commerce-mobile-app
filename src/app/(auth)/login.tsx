@@ -29,7 +29,7 @@ type FormData = z.infer<typeof schema>;
 export default function LoginScreen() {
   const router = useRouter();
   const login = useLogin();
-  const loginMutation = useLogin();
+  const { error, isPending } = useLogin();
   const [showPassword, setShowPassword] = React.useState(false);
 
   const {
@@ -82,12 +82,10 @@ export default function LoginScreen() {
           </View>
 
           {/* Error */}
-          {loginMutation.error && (
+          {error && (
             <View style={styles.errorBox}>
               <Ionicons name="alert-circle" size={16} color={Colors.danger} />
-              <Text style={styles.errorText}>
-                {loginMutation.error.message}
-              </Text>
+              <Text style={styles.errorText}>{error.message}</Text>
             </View>
           )}
 
@@ -153,9 +151,9 @@ export default function LoginScreen() {
             />
 
             <Button
-              title={loginMutation.isPending ? "Signing in…" : "Sign in"}
+              title={isPending ? "Signing in…" : "Sign in"}
               onPress={handleSubmit(onSubmit)}
-              loading={loginMutation.isPending}
+              loading={isPending}
               fullWidth
               style={{ marginTop: Spacing.sm }}
             />

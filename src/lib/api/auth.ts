@@ -9,7 +9,7 @@ import { api } from "./client";
 
 export const authApi = {
   register: (dto: RegisterDto) =>
-    api.post<void>("/auth/register", dto).then((r) => r.data),
+    api.post<Auth>("/auth/register", dto).then((r) => r.data),
 
   login: (dto: LoginDto) =>
     api.post<Auth>("/auth/login", dto).then((r) => r.data),
