@@ -1,5 +1,7 @@
-import { Button } from "./button";
-import { Input } from "./input";
-
-export { Button, Input };
+import { Button } from "./Button";
+import { Input } from "./Input";
+import { Pagination } from "./Pagination";
+import { ProductCard } from "./ProductCard";
+import { ProductFilters } from "./ProductFilters";
+export { Button, Input, Pagination, ProductCard, ProductFilters };
 

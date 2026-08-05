@@ -1,5 +1,4 @@
 import { Colors, FontSize, Radius, Spacing } from "@/constants";
-import React from "react";
 import { Text, TextInput, TextInputProps, View, ViewStyle } from "react-native";
 
 interface InputProps extends TextInputProps {
@@ -10,7 +9,7 @@ interface InputProps extends TextInputProps {
   containerStyle?: ViewStyle;
 }
 
-export const Input: React.FC<InputProps> = ({
+export const Input = ({
   label,
   error,
   leftIcon,
@@ -18,7 +17,7 @@ export const Input: React.FC<InputProps> = ({
   containerStyle,
   style,
   ...props
-}) => (
+}: InputProps) => (
   <View style={[{ marginBottom: Spacing.md }, containerStyle]}>
     {label && (
       <Text

@@ -1,10 +1,9 @@
 import { Colors, FontSize, Radius } from "@/constants";
-import React from "react";
 import {
-    ActivityIndicator,
-    Text,
-    TouchableOpacity,
-    ViewStyle,
+  ActivityIndicator,
+  Text,
+  TouchableOpacity,
+  ViewStyle,
 } from "react-native";
 
 interface ButtonProps {
@@ -18,7 +17,7 @@ interface ButtonProps {
   style?: ViewStyle;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button = ({
   title,
   onPress,
   variant = "primary",
@@ -27,7 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled = false,
   fullWidth = false,
   style,
-}) => {
+}: ButtonProps) => {
   const bg = {
     primary: Colors.primary,
     secondary: Colors.secondary,

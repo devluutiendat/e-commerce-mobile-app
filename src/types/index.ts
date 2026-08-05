@@ -98,9 +98,6 @@ export interface Order {
   createdAt: string;
   updatedAt: string;
 }
-export interface UpdateUserRoleDto {
-  role: UserRole;
-}
 export interface ChangePasswordDto {
   currentPassword: string;
   newPassword: string;
@@ -121,14 +118,3 @@ export interface ProductsResponse {
     totalPages: number;
   };
 }
-
-export interface CreateProductDto {
-  name: string;
-  type: string;
-  description: string;
-  price: number;
-  discountPercent?: number;
-  images: string;
-}
-
-export type UpdateProductDto = Partial<CreateProductDto>;
