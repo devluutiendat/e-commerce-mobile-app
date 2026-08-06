@@ -45,11 +45,7 @@ export default function ProductsScreen() {
         queryParams[key] = String(value);
       }
     });
-
-    router.push({
-      pathname: "/products",
-      params: queryParams,
-    });
+    router.push(`/products/${queryParams.id}`);
   }
 
   const totalPages = data ? Math.max(1, Math.ceil(data.meta.total / LIMIT)) : 1;

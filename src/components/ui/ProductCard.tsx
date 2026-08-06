@@ -17,7 +17,7 @@ export function ProductCard({ product }: Props) {
     <TouchableOpacity
       style={styles.container}
       activeOpacity={0.9}
-      onPress={() => router.push(`//${product.id}`)}
+      onPress={() => router.push(`/products/${product.id}`)}
     >
       <View style={styles.imageContainer}>
         <Image
