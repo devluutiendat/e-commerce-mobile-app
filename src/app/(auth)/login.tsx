@@ -52,7 +52,6 @@ export default function LoginScreen() {
             type: "success",
             text1: "wellcome back",
           });
-          console.log(1111);
         },
         onError: (error) =>
           Toast.show({

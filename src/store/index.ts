@@ -1,9 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { default as authReducer, default as cartReducer } from "./slices/authSlice";
+import authReducer from "./slices/authSlice";
+import cartReducer from "./slices/cartSlice";
 
 export const store = configureStore({
-  reducer: { auth: authReducer, cart: cartReducer },
+  reducer: {
+    auth: authReducer,
+    cart: cartReducer,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),
 });
